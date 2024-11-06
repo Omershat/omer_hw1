@@ -22,6 +22,7 @@
     <ClInclude Include="Queue.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main1.cpp" />
     <ClCompile Include="Queue.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

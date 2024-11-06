@@ -37,18 +37,18 @@ void initQueue(Queue* q, unsigned int size)
 
 int dequeue(Queue* q)
 {
-	// decreasing the count
-	q->elementNum -= 1;
+	unsigned int returnValue = q->values[0]; // Get the value at the front of the queue
 
-	// getting the values after the decresment 
+	//  moving everyone one to the left
+	for (int i = 0; i < q->elementNum - 1; i++)
+	{
+		q->values[i] = q->values[i + 1];
+	}
 
-	unsigned int retrunValue = q->values[q->elementNum];
+	q->values[q->elementNum - 1] = 0; // clear the last position
+	q->elementNum -= 1; // decreasing the number of elements
 
-	// clearing the slot
-
-	q->values[q->elementNum] = 0;
-
-	return retrunValue;
+	return returnValue;
 }
 
 
@@ -70,7 +70,7 @@ void enqueue(Queue* q, unsigned int newValue)
 			tempPointer[i] = q->values[i];
 		}
 
-		// Deallocate memory of the old array
+		// deallocate memory of the old array
 		delete[] q->values; // i used this from google to understand how to delocate the memory
 		q->values = tempPointer;
 	}
