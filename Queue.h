@@ -8,6 +8,13 @@ typedef struct Queue
 {
 	// Complete the definition here
 
+    unsigned int* data;  
+    unsigned int size;   
+    int front;           
+    int rear;            
+    unsigned int count; 
+
+
 } Queue;
 
 void initQueue(Queue* q, unsigned int size);
