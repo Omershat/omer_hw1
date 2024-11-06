@@ -19,7 +19,7 @@ void cleanQueue(Queue* q)
 }
 
 
-void initQueue(Queue* q, unsigned int size);
+void initQueue(Queue* q, unsigned int size)
 {
 	q->values = new unsigned int[size];
 
@@ -28,7 +28,18 @@ void initQueue(Queue* q, unsigned int size);
 		q->values[i] = NULL;
 
 	}
-	q->maxElementNum = size;
+	q->maxElementsNum = size;
 	q->elementNum = 0;
 
 }
+
+int dequeue(Queue* q)
+{
+	q->elementNum -= 1;
+	unsigned int retrunValue = q->values[q->elementNum];
+	q->values[q->elementNum] = NULL;
+
+	return retrunValue;
+}
+
+
