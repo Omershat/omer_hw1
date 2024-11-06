@@ -43,3 +43,26 @@ int dequeue(Queue* q)
 }
 
 
+void enqueue(Queue* q, unsigned int newValue)
+{
+	
+	if (q->elementNum >= q->maxElementsNum)
+	{
+		q->maxElementsNum += 1;
+
+		unsigned int* tempPointer = new unsigned int[q->maxElementsNum];
+
+		for (int i = 0; i < q->maxElementsNum; i++)
+		{
+			tempPointer[i] = q->values[i];
+		}
+
+		delete[] q->values;
+		q->values = tempPointer;
+	}
+
+	q->values[q->elementNum] = newValue;
+
+
+	q->elementNum += 1;
+}
