@@ -26,12 +26,34 @@ void cleanStack(Stack* s)
 
 void push(Stack* s, unsigned int element)
 {
-	stack* oldLastNode = s->before;  
+	Stack* oldLastNote = s->before;  
 
 	
-	stack* newNote = new stack;  
+	Stack* newNote = new Stack;  
 	newNote->value = element;
-	newNote->before = s;  
+	newNote->before = oldLastNote;
 
-	s = newNote;  
+	s->before = newNote;
+}
+
+int pop(Stack* s)
+{
+	int returnInt = -1;  
+
+	Stack* lastNode = s->before;
+	if (lastNode == NULL)  
+	{
+		return NULL;  
+	}
+
+	Stack* beforeLastNode = lastNode->before;  
+
+	s->before = lastNode; 
+
+	returnInt = beforeLastNode->value;  
+
+	
+	delete lastNode; 
+
+	return returnInt;
 }
