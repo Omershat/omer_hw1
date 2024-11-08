@@ -9,8 +9,8 @@ void initStack(Stack* s)
 
 void cleanStack(Stack* s)
 {
-	stack* lastNote = s;
-	stack* tempPoninter;
+	Stack* lastNote = s;
+	Stack* tempPoninter;
 
 	while (lastNote)
 	{
