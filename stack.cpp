@@ -1,7 +1,7 @@
 #include "stack.h"
 #include <iostream>
 
-void initStack(stack* s)
+void initStack(Stack* s)
 {
 	s->value = 0;
 	s->before = 0;
