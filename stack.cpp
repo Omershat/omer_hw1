@@ -41,9 +41,9 @@ int pop(Stack* s)
 	int returnInt = -1;  
 
 	Stack* lastNode = s->before;
-	if (lastNode == NULL)  
+	if (!lastNode)  
 	{
-		return NULL;  
+		return returnInt;  
 	}
 
 	Stack* beforeLastNode = lastNode->before;  
