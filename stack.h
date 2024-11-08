@@ -4,11 +4,13 @@
 
 #include "LinkedList.h"
 
+
 /* a positive-integer value stack, with no size limit */
 typedef struct Stack
 {	
 	int value;
-	stack* before
+	Stack* before;
+	
 	
 
 } Stack;
