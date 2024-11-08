@@ -23,3 +23,15 @@ void cleanStack(Stack* s)
 		lastNote = tempPoninter;
 	}
 }
+
+void push(Stack* s, unsigned int element)
+{
+	stack* oldLastNode = s->before;  
+
+	
+	stack* newNote = new stack;  
+	newNote->value = element;
+	newNote->before = s;  
+
+	s = newNote;  
+}
