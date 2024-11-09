@@ -22,12 +22,15 @@
     <ClInclude Include="linkedList.h" />
     <ClInclude Include="stack.h" />
     <ClInclude Include="Queue.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="linkedList.cpp" />
     <ClCompile Include="main1.cpp" />
+    <ClCompile Include="main2.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="stack.cpp" />
+    <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
