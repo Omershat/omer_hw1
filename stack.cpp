@@ -26,34 +26,36 @@ void cleanStack(Stack* s)
 
 void push(Stack* s, unsigned int element)
 {
-	Stack* oldLastNote = s->before;  
+	Stack* oldLastNote = s->before;  // getting the last 
 
 	
 	Stack* newNote = new Stack;  
 	newNote->value = element;
 	newNote->before = oldLastNote;
 
-	s->before = newNote;
+	s->before = newNote; // last in first
 }
 
 int pop(Stack* s)
 {
-	int returnInt = -1;  
+	int retrunInt = -1;
 
-	Stack* lastNode = s->before;
-	if (!lastNode)  
+	Stack* lastNote = s->before;
+	if (!lastNote)  // cheaking if the last one is found
 	{
-		return returnInt;  
+		return retrunInt;
 	}
+	Stack* beforeLastNote = lastNote->before;  // take the secend last 
 
-	Stack* beforeLastNode = lastNode->before;  
 
-	s->before = lastNode; 
+	s->before = beforeLastNote;  // cacshe update
 
-	returnInt = beforeLastNode->value;  
+	retrunInt = lastNote->value;
 
-	
-	delete lastNode; 
+	// deleting
+	lastNote->value = 0;
+	lastNote->before = 0;
+	delete lastNote;
 
-	return returnInt;
+	return retrunInt;
 }
